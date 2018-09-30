@@ -1,0 +1,16 @@
+---
+ansible_network_os: "ios"
+ansible_username: "ansible"
+ansible_password: "ansible"
+ntp:
+  authenticate: true
+  auth_keys:
+    - id: 1
+      secret: "secretKey111"
+    - id: 2
+      secret: "secretKey222"
+  servers:
+    - ip: "192.0.2.1"
+      key_id: 1
+    - ip: "192.0.2.2"
+      key_id: 2

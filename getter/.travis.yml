@@ -1,0 +1,12 @@
+---
+language: python
+python:
+  - "2.7"
+
+# Install python packages for ansible and linters.
+install:
+  - "pip install -r requirements.txt"
+
+# Because these scripts are for training, just do a quick lint.
+script:
+  - "make lint"

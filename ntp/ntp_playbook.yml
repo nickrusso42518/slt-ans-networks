@@ -1,0 +1,14 @@
+---
+- hosts: routers
+  tasks:
+    - name: "Apply NTP config"
+      ios_config:
+        src: "templates/ntp_config.j2"
+      notify: "ntp_was_updated"
+      register: "ntp_updates"
+
+  handlers:
+    - name: "Print changes since NTP was updated"
+      listen: "ntp_was_updated"
+      debug:
+        msg: "{{ ntp_updates.updates | to_nice_json }}"
