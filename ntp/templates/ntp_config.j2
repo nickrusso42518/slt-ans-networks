@@ -2,7 +2,7 @@
 ntp authenticate
 {% endif %}
 {% for k in ntp.auth_keys %}
-ntp authentication-key {{ k.id }} md5 {{ k.secret }}
+ntp authentication-key {{ k.id }} md5 {{ k.secret_hash }} 7
 {% endfor %}
 {% for s in ntp.servers %}
 ntp server {{ s.ip }} key {{ s.key_id }}

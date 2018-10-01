@@ -1,12 +1,12 @@
 ---
-- hosts: routers
+- name: "Collect information from router and print it"
+  hosts: routers
   tasks:
     - name: "Run commands on router"
       ios_command:
         commands: "{{ commands }}"
       register: cli_output
 
-    - name: "Print output to console"
+    - name: "Print collected output"
       debug:
-        msg: "{{ item }}"
-      with_items: "{{ cli_output.stdout_lines }}"
+        var: cli_output.stdout_lines

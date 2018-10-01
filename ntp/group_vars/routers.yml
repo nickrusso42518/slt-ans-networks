@@ -1,14 +1,14 @@
 ---
 ansible_network_os: "ios"
-ansible_username: "ansible"
-ansible_password: "ansible"
+ansible_user: "ansible"
+ansible_ssh_pass: "ansible"
 ntp:
   authenticate: true
   auth_keys:
     - id: 1
-      secret: "secretKey111"
+      secret_hash: "0832494D1B1C113C17125D557B"  # secretKey111
     - id: 2
-      secret: "secretKey222"
+      secret_hash: "111A1C0605171F27013379767A"  # secretKey222
   servers:
     - ip: "192.0.2.1"
       key_id: 1

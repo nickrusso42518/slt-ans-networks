@@ -1,7 +1,7 @@
 ---
 ansible_network_os: "ios"
-ansible_username: "ansible"
-ansible_password: "ansible"
+ansible_user: "ansible"
+ansible_ssh_pass: "ansible"
 commands:
   - "show ip route"
   - "show ip interface brief"
