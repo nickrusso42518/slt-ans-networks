@@ -29,6 +29,27 @@ After cloning, you should see the following file system structure:
 
 ```
 $ tree
+.
+├── getter
+│   ├── ansible.cfg
+│   ├── getter_playbook.yml
+│   ├── group_vars
+│   │   └── routers.yml
+│   ├── hosts.yml
+│   └── README.md
+├── LICENSE
+├── Makefile
+├── ntp
+│   ├── ansible.cfg
+│   ├── group_vars
+│   │   └── routers.yml
+│   ├── hosts.yml
+│   ├── ntp_playbook.yml
+│   ├── README.md
+│   └── templates
+│       └── ntp_config.j2
+├── README.md
+└── requirements.txt
 ```
 
 Ensure you have Python 2.7 (not Python 3) installed along with pip.
