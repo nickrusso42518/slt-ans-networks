@@ -1,7 +1,7 @@
 ---
 ansible_network_os: "ios"
 ansible_user: "ansible"
-ansible_ssh_pass: "ansible"
+ansible_password: "ansible"
 ntp:
   authenticate: true
   auth_keys:
