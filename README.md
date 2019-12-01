@@ -52,7 +52,7 @@ $ tree
 └── requirements.txt
 ```
 
-Ensure you have Python 2.7 (not Python 3) installed along with pip.
+Ensure you have Python 3.6 or newer installed along with pip.
 
 > Visit https://www.python.org/downloads/ to download Python.
 
@@ -71,7 +71,15 @@ You should have access to the `ansible` command on the correct version.
 
 ```
 $ ansible --version
-ansible 2.6.2
+ansible 2.8.7
+  config file = /home/ec2-user/racc/ansible.cfg
+  configured module search path = ['/home/ec2-user/.ansible/plugins/modules',
+    '/usr/share/ansible/plugins/modules']
+  ansible python module location =
+    /home/ec2-user/environments/racc287/lib/python3.7/site-packages/ansible
+  executable location = /home/ec2-user/environments/racc287/bin/ansible
+  python version = 3.7.3 (default, Aug 27 2019, 16:56:53)
+    [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
 ```
 
 ## Usage

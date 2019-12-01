@@ -1,6 +1,6 @@
 ---
 - name: "Manage NTP configuration"
-  hosts: routers
+  hosts: "routers"
   tasks:
     - name: "Apply NTP updates using jinja2 template"
       ios_config:
@@ -12,4 +12,5 @@
     - name: "Print changes since NTP was updated"
       listen: "ntp_was_updated"
       debug:
-        var: ntp_updates.updates
+        var: "ntp_updates.updates"
+...

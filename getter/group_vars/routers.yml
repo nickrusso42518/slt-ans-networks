@@ -6,3 +6,4 @@ commands:
   - "show ip route"
   - "show ip interface brief"
   - "show inventory"
+...
