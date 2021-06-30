@@ -3,11 +3,11 @@
   hosts: "routers"
   tasks:
     - name: "Run commands on router"
-      ios_command:
+      cisco.ios.ios_command:
         commands: "{{ commands }}"
       register: "cli_output"
 
     - name: "Print collected output"
-      debug:
+      ansible.builtin.debug:
         var: "cli_output.stdout_lines"
 ...

@@ -1,6 +1,6 @@
 [![Build Status](
-https://travis-ci.org/nickrusso42518/slt-ans-networks.svg?branch=master)](
-https://travis-ci.org/nickrusso42518/slt-ans-networks)
+https://travis-ci.com/nickrusso42518/slt-ans-networks.svg?branch=master)](
+https://travis-ci.com/nickrusso42518/slt-ans-networks)
 
 # Safari Live Training - Ansible for Managing Network Devices
 Source code for the training course. Please contact me with any questions.
@@ -14,7 +14,6 @@ the control/development machine.
 
   * [Download Instructions](#download-instructions)
   * [Usage](#usage)
-  * [Testing](#testing)
 
 ## Download Instructions
 The easiest way to consume this code is to clone it using SSH or HTTPS.
@@ -28,28 +27,28 @@ HTTPS: `git clone https://github.com/nickrusso42518/slt-ans-networks.git`
 After cloning, you should see the following file system structure:
 
 ```
-$ tree
+$ tree --charset=ascii
 .
-├── getter
-│   ├── ansible.cfg
-│   ├── getter_playbook.yml
-│   ├── group_vars
-│   │   └── routers.yml
-│   ├── hosts.yml
-│   └── README.md
-├── LICENSE
-├── Makefile
-├── ntp
-│   ├── ansible.cfg
-│   ├── group_vars
-│   │   └── routers.yml
-│   ├── hosts.yml
-│   ├── ntp_playbook.yml
-│   ├── README.md
-│   └── templates
-│       └── ntp_config.j2
-├── README.md
-└── requirements.txt
+|-- getter
+|   |-- ansible.cfg
+|   |-- getter_playbook.yml
+|   |-- group_vars
+|   |   `-- routers.yml
+|   |-- hosts.yml
+|   `-- README.md
+|-- LICENSE
+|-- ntp
+|   |-- ansible.cfg
+|   |-- group_vars
+|   |   `-- routers.yml
+|   |-- hosts.yml
+|   |-- ntp_playbook.yml
+|   |-- README.md
+|   `-- templates
+|       `-- ntp_config.j2
+|-- README.md
+|-- requirements.txt
+`-- requirements.yml
 ```
 
 Ensure you have Python 3.6 or newer installed along with pip.
@@ -62,23 +61,25 @@ or
 
 `sudo easy_install pip`
 
-You can install the specific packages (really just Ansible and a YAML linter)
-using the  following command:
+You can install the specific packages using the following commands:
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+ansible-galaxy collection install -r requirements.yml
+```
 
 You should have access to the `ansible` command on the correct version.
 
 ```
 $ ansible --version
-ansible 2.8.7
-  config file = /home/ec2-user/racc/ansible.cfg
-  configured module search path = ['/home/ec2-user/.ansible/plugins/modules',
+ansible 2.10.11
+  config file = /home/centos/code/racc/ansible.cfg
+  configured module search path = ['/home/centos/.ansible/plugins/modules',
     '/usr/share/ansible/plugins/modules']
   ansible python module location =
-    /home/ec2-user/environments/racc287/lib/python3.7/site-packages/ansible
-  executable location = /home/ec2-user/environments/racc287/bin/ansible
-  python version = 3.7.3 (default, Aug 27 2019, 16:56:53)
+    /home/centos/environments/ans3/lib/python3.7/site-packages/ansible
+  executable location = /home/centos/environments/ans3/bin/ansible
+  python version = 3.7.3 (default, Apr 28 2019, 11:01:35)
     [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
 ```
 
@@ -89,15 +90,3 @@ subdirectory performs basic line-level NTP configuration management.
 
 These individual projects have their own READMEs which provides more
 information about their main purpose in this course.
-
-## Testing
-A GNU Makefile with phony targets is used for testing this codebase.
-There is currently only one step:
-  * `lint`: Runs YAML linter. This captures any syntax or
-    styling errors with the Ansible playbooks or variable files.
-
-You can run `make lint` to execute the testing manually. Because these two
-projects are used for reference only and are not cloned into the course,
-more detailed testing is not needed. They are kept as simple as possible for
-learning purposes. The production playbooks `racc` and `natm` have more
-comprehensive testing via CI.
